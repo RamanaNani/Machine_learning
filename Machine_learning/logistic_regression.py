@@ -32,15 +32,15 @@ class LogisticRegression:
 
             if self.regularization == 'l2':
                 penalty = (self.lambda_ / m) * self.w[1:]  # Exclude bias term after the derivative
+                gradient[1:] += penalty
             elif self.regularization == 'l1':
                 penalty = (self.lambda_ / m) * np.sign(self.w[1:])  # Exclude bias term
-
-            gradient[1:] += penalty  # Add penalty to gradient
+                gradient[1:] += penalty  # Add penalty to gradient
             self.w -= self.learning_rate * gradient  # Correct weight update
 
     # Prediction function
     def predict(self, X):
-        """Make predictions using the trained model."""
+        # Make predictions using the trained model.
         m = X.shape[0]
         X = np.hstack([np.ones((m, 1)), X])  # Add bias term
         z = X.dot(self.w)
