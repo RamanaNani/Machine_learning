@@ -12,7 +12,7 @@ class LogisticRegression:
         """Compute the sigmoid of z."""
         return 1 / (1 + np.exp(-z))
 
-    # Cost function (log loss)
+    # Cost function (log loss) to calculate the loss
     def loss(self, y_pred, y, m):
         """Compute the log loss."""
         j = -np.sum(y * np.log(y_pred) + (1 - y) * np.log(1 - y_pred)) / m

@@ -7,7 +7,7 @@ class LinearRegression:
         self.regularization = regularization
 
     def mse(self, y_pred, y, m):
-        # Calculate Mean Squared Error
+        # Calculate Mean Squared Error to calculate the loss
         j = np.sum((y_pred - y)**2)/(2*m) 
         return j
     
