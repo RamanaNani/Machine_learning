@@ -42,7 +42,7 @@ class KMeans:
         # predict the cluster points
         return self.get_clusters(X)
     
-# Example usage for the model
+
 if __name__ == "__main__":
     np.random.seed(42)
     X = np.random.rand(100, 2)
